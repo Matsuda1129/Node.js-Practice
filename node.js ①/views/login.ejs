@@ -1,22 +1,32 @@
 <html>
-  <link rel='stylesheet' href='/css/index.css' />
+  <head>
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css" integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
+  </head>
+    
+  <body>
+    <section>
+      <span>Laravel</span>
+      <a href="/">Login</a>
+      <a href="register">Register</a>
+    </section>
 
-  <section>
-    <span class='display'>Laravel</span>
-    <a href="/">Login</a>
-    <a href="register">Register</a>
-  </section>
-  <h1>Login</h1>
-  <form action="">
-    <p class='display'>E-Mail Address</p>
-    <input type="text">
-  </form>
-  <form action="">
-    <p class='display'>PassWord</p>
-    <input type="text">
-  </form>
-  <section>
-    <button class='display'>Login</button>
-    <span>Forget Your PassWord?</span>
-  </section>
+    <div class="container">
+
+      <h1>Login</h1>
+      
+     <form action="/register" method="post">
+      <div class="form-group">
+        <label for="email" class="form-label">メールアドレス</label>
+        <input type="email" class="form-control" name='email' id="email">
+      </div>
+      <div class="form-group">
+        <label for="password" class="form-label">パスワード</label>
+        <input type="password" class="form-control" name='password' id="password">
+      </div>
+      <button type="submit">Submit</button>
+    </form>
+    
+  </div>
+
+</body>
 </html>

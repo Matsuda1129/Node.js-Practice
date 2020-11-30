@@ -1,27 +1,49 @@
 <html>
-  <link rel='stylesheet' href='/css/index.css' />
+  <head>
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css" integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
+  </head>
+    
+  <body>
+    <section>
+      <span>Laravel</span>
+      <a href="/">Login</a>
+      <a href="register">Register</a>
+    </section>
 
-  <section>
-    <span class='display'>Laravel</span>
-    <a href="/">Login</a>
-    <a href="register">Register</a>
-  </section>
-  <h1>Register</h1>
-  <form action="">
-    <p class='display'>Name</p>
-    <input type="text">
-  </form>
-  <form action="">
-    <p class='display'>E-Mail Address</p>
-    <input type="text">
-  </form>
-  <form action="">
-    <p class='display'>PassWord</p>
-    <input type="text">
-  </form>
-  <form action="">
-    <p class='display'>Conform PassWord</p>
-    <input type="text">
-  </form>
-    <button class='display'>Register</button>
+    <div class="container">
+
+      <h1>Register</h1>
+
+      <% if(typeof alert != 'undefined') { %>
+        <% alert.forEach((error) => { %>
+          <div class="alert alert-warning alert-dismissible fade show" role="alert">
+            <%= error.msg %>
+            <button type="button" class="close" data-dismiss="alert" aria-label="Close">
+            </button>
+          </div>
+            <% }) %>
+            <% } %>
+     <form action="/register" method="post">
+      <div class="form-group">
+        <label for="username" class="form-label">ユーザー名</label>
+        <input type="text" class="form-control" name='username' id="username">
+      </div>
+      <div class="form-group">
+        <label for="email" class="form-label">メールアドレス</label>
+        <input type="email" class="form-control" name='email' id="email">
+      </div>
+      <div class="form-group">
+        <label for="password" class="form-label">パスワード</label>
+        <input type="password" class="form-control" name='password' id="password">
+      </div>
+      <div class="form-group">
+        <label for="password" class="form-label">パスワード確認</label>
+        <input type="password" class="form-control" name='comfirmPassword' id="comfirmPassword">
+      </div>
+      <button type="submit">Submit</button>
+    </form>
+    
+  </div>
+
+</body>
 </html>
