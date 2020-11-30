@@ -10,6 +10,7 @@ app.set("view engine", "ejs");
 const urlencodedParser = bodyParser.urlencoded({ extended: false })
 app.use(express.static("public"));
 
+
 app.listen(4000, () => {
   console.log(" App listening on port 4000");
 });
@@ -57,3 +58,7 @@ app.post("/register", urlencodedParser,[
     }
   }
 );
+
+app.get('/register', (req, res) => {
+  res.render('register');
+})
